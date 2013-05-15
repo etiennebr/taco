@@ -1,0 +1,15 @@
+Package: taco
+Type: Package
+Title: Wrap system calls in R
+Version: 1.0
+Date: 2013-05-13
+Author: Etienne B. Racine
+Maintainer: Etienne B. Racine <etiennebr@gmail.com>
+Description: Provide interface to easily wrap system calls and command line
+    options.
+License: GPL-3
+Suggests:
+    testthat
+Collate:
+    'system.R'
+    'taco.R'
