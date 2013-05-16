@@ -9,25 +9,26 @@ at the top of this page.
 ## Example
 With taco you can easily wrap system calls in a functions. This is a commit 
 example for git. There is a multitude of options, but let's keep it simple:
-  commit <- function(message = NA, all = TRUE, indir = getwd()) {
-    arg <- paste( "commit",
-      as_argument("a", all), 
-      as_argument("m", message, mandatory = 1) # make message mandatory
-    )
-    system_dir(indir, "git", arg)
-  }
+
+    commit <- function(message = NA, all = TRUE, indir = getwd()) {
+      arg <- paste( "commit",
+        as_argument("a", all), 
+        as_argument("m", message, mandatory = 1) # make message mandatory
+      )
+      system_dir(indir, "git", arg)
+    }
   
 you can then call 
-  commit("hello world")
-  
 
+    commit("hello world")
+  
 ## Install
 to install or update your taco package you need the `devtools`package since 
 taco is not on CRAN.
 
-  # install.packages("devtools")
-  library(devtools)
-  install_github("taco", "etiennebr")
+    # install.packages("devtools")
+    library(devtools)
+    install_github("taco", "etiennebr")
 
 
 ## Contribute
