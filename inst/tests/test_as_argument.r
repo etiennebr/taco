@@ -18,5 +18,6 @@ test_that("Argument transformation working as expected", {
 test_that("arguments are conform to expectations", {
   expect_error(as_argument("p", TRUE, 2))
   expect_error(as_argument("p", c(1, 2), 3))
-  expect_error(as_argument(NA, expect = 1))
+  expect_error(as_argument(NA, mandatory = 1))
+  expect_equal(as_argument("p", NA, expect = 2), "")
 })

@@ -3,7 +3,8 @@
 \title{Transform arguments as a pairs of flag and values}
 \usage{
   as_argument(flag = NA, arg = NA, expect = NA,
-    spacer = " ", parrot = is.list(arg), mark = "-")
+    spacer = " ", parrot = is.list(arg), mark = "-",
+    mandatory = NA)
 }
 \arguments{
   \item{flag}{option parameter}
@@ -13,7 +14,11 @@
 
   \item{spacer}{for parameters}
 
-  \item{expect}{number of parameters to expect}
+  \item{expect}{number of parameters to expect if given any
+  (for required number of parameters use `mandatory`)}
+
+  \item{mandatory}{number of mandatory parameters (for
+  optional parameters use `expect`)}
 
   \item{parrot}{repeat flag for each list element ?}
 
