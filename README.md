@@ -10,11 +10,11 @@ at the top of this page.
 With taco you can easily wrap system calls in a functions. This is a commit 
 example for git. There is a multitude of options, but let's keep it simple:
   commit <- function(message = NA, all = TRUE, indir = getwd()) {
-    cmd <- paste("git commit",
-        as_argument("a", all), 
-        as_argument("m", message, expect = 1) # make message mandatory
-      )
-    system_dir(indir, cmd)
+    arg <- paste( "commit",
+      as_argument("a", all), 
+      as_argument("m", message, mandatory = 1) # make message mandatory
+    )
+    system_dir(indir, "git", arg)
   }
   
 you can then call 
