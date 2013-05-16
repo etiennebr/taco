@@ -1,19 +1,25 @@
 #' Safely execute system from different directory
 #' 
 #' @param indir directory to execute from
-#' @param command comand to send to system
+#' @param command to send to system see (\code{\link[base]{system2}})
+#' @param arg command arguments
 #' @param ... other arguments passed to system
 #' @details see \code{\link[base]{system2}} and \code{\link[base]{system}}
+#' @seealso \code{\link[base]{system2}}
 #' @export
-system_dir <- function(indir = NULL, command, ...) {
+system_dir <- function(indir = NULL, command, arg = "", ...) {
+
   if (!is.null(indir)) {
+    # remove trailing slash
+    indir <- gsub("[/\\]$", "", indir)
     stopifnot(file.exists(indir)) 
     cur <- getwd()
     setwd(indir)
     on.exit(setwd(cur))
   }
-  
-  system2(command, ...)
+  # test for not so obvious potential error
+  if (arg == "" & grepl("\\s", command)) warning("you must split command and arguments")
+  system2(command, arg, ...)
 }
 
 #' Transform arguments as a pairs of flag and values

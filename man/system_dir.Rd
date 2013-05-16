@@ -2,12 +2,15 @@
 \alias{system_dir}
 \title{Safely execute system from different directory}
 \usage{
-  system_dir(indir = NULL, command, ...)
+  system_dir(indir = NULL, command, arg = "", ...)
 }
 \arguments{
   \item{indir}{directory to execute from}
 
-  \item{command}{comand to send to system}
+  \item{command}{to send to system see
+  (\code{\link[base]{system2}})}
+
+  \item{arg}{command arguments}
 
   \item{...}{other arguments passed to system}
 }
@@ -17,5 +20,8 @@
 \details{
   see \code{\link[base]{system2}} and
   \code{\link[base]{system}}
+}
+\seealso{
+  \code{\link[base]{system2}}
 }
 
