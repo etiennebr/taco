@@ -1,7 +1,7 @@
 taco
 ====
 
-Taco is  package for R that provides an interface to easily wrap system calls 
+Taco is a package for R that provides an interface to easily wrap system calls 
 and command line. You can easily chain command line arguments and provide simple 
 validation. Taco is in its infancy. If you see something missing, add an issue 
 at the top of this page.
