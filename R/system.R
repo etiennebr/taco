@@ -1,4 +1,4 @@
-#' Safely execute system from different directory
+#' Safely execute system call from different directory
 #' 
 #' @param indir directory to execute from
 #' @param command to send to system see (\code{\link[base]{system2}})
@@ -8,18 +8,27 @@
 #' @seealso \code{\link[base]{system2}}
 #' @export
 system_dir <- function(indir = NULL, command, arg = "", ...) {
+  # test for not so obvious potential error
+  if (arg == "" & grepl("\\s", command)) warning("you must split command and arguments")
+  in_dir(indir, system2(command, arg, ...))
+}
 
+#' Execute code in temporarily altered environment
+#' 
+#' This function is very similar to the devtools package
+#' @param indir temporary directory
+#' @param code code to execute
+#' @author Original function form Hadley Wickham
+in_dir <- function (indir, code) {
   if (!is.null(indir)) {
     # remove trailing slash
     indir <- gsub("[/\\]$", "", indir)
     stopifnot(file.exists(indir)) 
-    cur <- getwd()
-    setwd(indir)
-    on.exit(setwd(cur))
   }
-  # test for not so obvious potential error
-  if (arg == "" & grepl("\\s", command)) warning("you must split command and arguments")
-  system2(command, arg, ...)
+  
+  old <- setwd(indir)
+  on.exit(setwd(old))
+  force(code)
 }
 
 #' Transform arguments as a pairs of flag and values

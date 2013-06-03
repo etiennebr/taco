@@ -1,6 +1,6 @@
 \name{system_dir}
 \alias{system_dir}
-\title{Safely execute system from different directory}
+\title{Safely execute system call from different directory}
 \usage{
   system_dir(indir = NULL, command, arg = "", ...)
 }
@@ -15,7 +15,7 @@
   \item{...}{other arguments passed to system}
 }
 \description{
-  Safely execute system from different directory
+  Safely execute system call from different directory
 }
 \details{
   see \code{\link[base]{system2}} and
