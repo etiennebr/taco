@@ -24,10 +24,11 @@ in_dir <- function (indir, code) {
     # remove trailing slash
     indir <- gsub("[/\\]$", "", indir)
     stopifnot(file.exists(indir)) 
+    
+    old <- setwd(indir)
+    on.exit(setwd(old))
   }
   
-  old <- setwd(indir)
-  on.exit(setwd(old))
   force(code)
 }
 
