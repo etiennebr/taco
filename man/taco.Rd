@@ -4,6 +4,6 @@
 \alias{taco-package}
 \title{taco.}
 \description{
-  taco.
+taco.
 }
 

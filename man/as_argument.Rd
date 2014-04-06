@@ -2,9 +2,8 @@
 \alias{as_argument}
 \title{Transform arguments as a pairs of flag and values}
 \usage{
-  as_argument(flag = NA, arg = NA, expect = NA,
-    spacer = " ", parrot = is.list(arg), mark = "-",
-    mandatory = NA)
+as_argument(flag = NA, arg = NA, expect = NA, spacer = " ",
+  parrot = is.list(arg), mark = "-", mandatory = NA)
 }
 \arguments{
   \item{flag}{option parameter}
@@ -25,7 +24,7 @@
   \item{mark}{flag marker}
 }
 \description{
-  Transform arguments as a pairs of flag and values
+Transform arguments as a pairs of flag and values
 }
 \examples{
 as_argument("merged", TRUE) #== "-merged"

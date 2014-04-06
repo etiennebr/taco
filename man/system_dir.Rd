@@ -2,7 +2,7 @@
 \alias{system_dir}
 \title{Safely execute system call from different directory}
 \usage{
-  system_dir(indir = NULL, command, arg = "", ...)
+system_dir(indir = NULL, command, arg = "", ...)
 }
 \arguments{
   \item{indir}{directory to execute from}
@@ -15,13 +15,13 @@
   \item{...}{other arguments passed to system}
 }
 \description{
-  Safely execute system call from different directory
+Safely execute system call from different directory
 }
 \details{
-  see \code{\link[base]{system2}} and
-  \code{\link[base]{system}}
+see \code{\link[base]{system2}} and
+\code{\link[base]{system}}
 }
 \seealso{
-  \code{\link[base]{system2}}
+\code{\link[base]{system2}}
 }
 

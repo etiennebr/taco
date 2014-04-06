@@ -3,7 +3,7 @@
 \alias{vf}
 \title{Validate option flag}
 \usage{
-  valid_flag(flag, mark = "-")
+valid_flag(flag, mark = "-")
 }
 \arguments{
   \item{flag}{character}
@@ -11,7 +11,7 @@
   \item{mark}{flag marker}
 }
 \description{
-  Validate option flag
+Validate option flag
 }
 \examples{
 valid_flag("op")
